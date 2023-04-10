@@ -9,7 +9,6 @@
     "clean": "rm -rf node_modules package-lock.json"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
     "vue": "^2.7"
   },
   "devDependencies": {
