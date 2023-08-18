@@ -1,0 +1,215 @@
+Sauce Cypress Runner 10.4.0
+Running Cypress 12.17.2
+Preparing npm environment
+Finished
+
+
+DevTools listening on ws://127.0.0.1:49797/devtools/browser/9b42c264-54ed-42cf-b46c-6189e17421cd
+Missing baseUrl in compilerOptions. tsconfig-paths will be skipped
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        12.17.2                                                                        │
+  │ Browser:        Custom Chrome 116                                                              │
+  │ Node Version:   v18.16.1 (D:\sauce-cypress-runner\10.4.0\bundle\node.exe)                      │
+  │ Specs:          1 found (nightly.cy.js)                                                        │
+  │ Searched:       cypress/e2e/nightly.cy.js                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  nightly.cy.js                                                                   (1 of 1)
+
+
+  testing landing page
+    1) submit github user and await response
+   6 |   it('submit github user and await response', () => {
+   7 |     cy.intercept( 'GET', 'https://api.github.com/users/octocat', []).as('getOctocatData')
+>  8 |     cy.get('[data-cy="submitUser"]').click()
+     |        ^
+   9 |     cy.wait('@getOctocatData').should('not.equal', '')
+  10 |   })
+  11 | 
+Timed out retrying after 4000ms: Expected to find element: `[data-cy="submitUser"]`, but never found it.
+    2) check that the user and repo elements are visible
+  11 | 
+  12 |   it('check that the user and repo elements are visible', () => {
+> 13 |     cy.get('[data-cy="submitUser"]').click()
+     |        ^
+  14 |     cy.get('[data-cy="userInfo"]').should('be.visible')
+  15 |     cy.get('[data-cy="repoList"]').should('be.visible')
+  16 |   } )
+Timed out retrying after 4000ms: Expected to find element: `[data-cy="submitUser"]`, but never found it.
+    3) clear user input and ensure elements are not visible
+  17 | 
+  18 |   it('clear user input and ensure elements are not visible', () => {
+> 19 |     cy.get('[data-cy="userInput"]').clear()
+     |        ^
+  20 |     cy.get('[data-cy="userInput"]').should('have.value', '')
+  21 |     cy.get('[data-cy="userInfo"]').should('not.be.visible')
+  22 |     cy.get('[data-cy="repoList"]').should('not.be.visible')
+Timed out retrying after 4000ms: Expected to find element: `[data-cy="userInput"]`, but never found it.
+    4) add user input and submit
+  24 | 
+  25 |   it('add user input and submit', () => {
+> 26 |     cy.get('[data-cy="userInput"]').clear()
+     |        ^
+  27 |     cy.get('[data-cy="userInput"]').type('octocat')
+  28 |     cy.get('[data-cy="userInput"]').should('have.value', 'octocat')
+  29 |     cy.get('[data-cy="submitUser"]').click()
+Timed out retrying after 4000ms: Expected to find element: `[data-cy="userInput"]`, but never found it.
+    5) open Octocat modal, await data response, and close modal
+  32 |   it('open Octocat modal, await data response, and close modal',  () => {
+  33 |     cy.intercept( 'GET', 'https://raw.githubusercontent.com/octocat/hello-worId/master/README.md', []).as('getReadMe')
+> 34 |     cy.get('[data-cy="openOctocatModal"]').click()
+     |        ^
+  35 |     cy.wait('@getReadMe').should('not.equal', '')
+  36 |     cy.get('[data-cy="closeOctocatModal"]').click()
+  37 |   }) 
+Timed out retrying after 4000ms: Expected to find element: `[data-cy="openOctocatModal"]`, but never found it.
+    6) get repo root files and load in external tabs
+  38 |   
+  39 |   it('get repo root files and load in external tabs', () => {
+> 40 |     cy.get('[data-cy="submitUser"]').click()
+     |        ^
+  41 |     cy.get('[data-cy="repoName"]').click({ multiple: true })
+  42 |   })
+  43 |   
+Timed out retrying after 4000ms: Expected to find element: `[data-cy="submitUser"]`, but never found it.
+    7) click "About HeroDevs" button on home page
+  43 |   
+  44 |   it('click "About HeroDevs" button on home page', () => {
+> 45 |     cy.get('[data-cy="aboutButton"]').click()
+     |        ^
+  46 |     cy.url().should('include', '/about.html')
+  47 |   })
+  48 | })
+Timed out retrying after 4000ms: Expected to find element: `[data-cy="aboutButton"]`, but never found it.
+
+  testing about page
+    8) load modal and ensure element is visible
+  53 |   })
+  54 |   it('load modal and ensure element is visible', () => {
+> 55 |     cy.get('[data-cy="modal"]').click()
+     |        ^
+  56 |     cy.get('[data-cy="modalContent"]').should('have.css', 'display', 'block')
+  57 |     cy.get('[data-cy="closeModal"]').click()
+  58 |     cy.get('[data-cy="modalContent"]').should('have.css', 'display', 'none')
+Timed out retrying after 4000ms: Expected to find element: `[data-cy="modal"]`, but never found it.
+    9) returns home from about page
+  60 |   
+  61 |   it('returns home from about page', () => {
+> 62 |     cy.get('[data-cy="home"]').click()
+     |        ^
+  63 |     cy.url().should('include', '/')
+  64 |   })
+  65 | })
+Timed out retrying after 4000ms: Expected to find element: `[data-cy="home"]`, but never found it.
+
+
+  0 passing (40s)
+  9 failing
+
+  1) testing landing page
+       submit github user and await response:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy="submitUser"]`, but never found it.
+      at Context.eval (webpack:///./cypress/e2e/nightly.cy.js:8:7)
+
+  2) testing landing page
+       check that the user and repo elements are visible:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy="submitUser"]`, but never found it.
+      at Context.eval (webpack:///./cypress/e2e/nightly.cy.js:13:7)
+
+  3) testing landing page
+       clear user input and ensure elements are not visible:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy="userInput"]`, but never found it.
+      at Context.eval (webpack:///./cypress/e2e/nightly.cy.js:19:7)
+
+  4) testing landing page
+       add user input and submit:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy="userInput"]`, but never found it.
+      at Context.eval (webpack:///./cypress/e2e/nightly.cy.js:26:7)
+
+  5) testing landing page
+       open Octocat modal, await data response, and close modal:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy="openOctocatModal"]`, but never found it.
+      at Context.eval (webpack:///./cypress/e2e/nightly.cy.js:34:7)
+
+  6) testing landing page
+       get repo root files and load in external tabs:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy="submitUser"]`, but never found it.
+      at Context.eval (webpack:///./cypress/e2e/nightly.cy.js:40:7)
+
+  7) testing landing page
+       click "About HeroDevs" button on home page:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy="aboutButton"]`, but never found it.
+      at Context.eval (webpack:///./cypress/e2e/nightly.cy.js:45:7)
+
+  8) testing about page
+       load modal and ensure element is visible:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy="modal"]`, but never found it.
+      at Context.eval (webpack:///./cypress/e2e/nightly.cy.js:55:7)
+
+  9) testing about page
+       returns home from about page:
+     AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy="home"]`, but never found it.
+      at Context.eval (webpack:///./cypress/e2e/nightly.cy.js:62:7)
+
+
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        9                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      9                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  9                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     39 seconds                                                                       │
+  │ Spec Ran:     nightly.cy.js                                                                    │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  D:\sauce-cypress-runner\10.4.0\bundle\__project__\__assets__\nightly.cy.js\testi     (1920x956)
+     ng landing page -- submit github user and await response (failed).png                          
+  -  D:\sauce-cypress-runner\10.4.0\bundle\__project__\__assets__\nightly.cy.js\testi     (1920x956)
+     ng landing page -- check that the user and repo elements are visible (failed).pn               
+     g                                                                                              
+  -  D:\sauce-cypress-runner\10.4.0\bundle\__project__\__assets__\nightly.cy.js\testi     (1920x956)
+     ng landing page -- clear user input and ensure elements are not visible (failed)               
+     .png                                                                                           
+  -  D:\sauce-cypress-runner\10.4.0\bundle\__project__\__assets__\nightly.cy.js\testi     (1920x956)
+     ng landing page -- add user input and submit (failed).png                                      
+  -  D:\sauce-cypress-runner\10.4.0\bundle\__project__\__assets__\nightly.cy.js\testi     (1920x956)
+     ng landing page -- open Octocat modal, await data response, and close modal (fai               
+     led).png                                                                                       
+  -  D:\sauce-cypress-runner\10.4.0\bundle\__project__\__assets__\nightly.cy.js\testi     (1920x956)
+     ng landing page -- get repo root files and load in external tabs (failed).png                  
+  -  D:\sauce-cypress-runner\10.4.0\bundle\__project__\__assets__\nightly.cy.js\testi     (1920x956)
+     ng landing page -- click About HeroDevs button on home page (failed).png                       
+  -  D:\sauce-cypress-runner\10.4.0\bundle\__project__\__assets__\nightly.cy.js\testi     (1920x956)
+     ng about page -- load modal and ensure element is visible (failed).png                         
+  -  D:\sauce-cypress-runner\10.4.0\bundle\__project__\__assets__\nightly.cy.js\testi     (1920x956)
+     ng about page -- returns home from about page (failed).png                                     
+
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ×  nightly.cy.js                            00:39        9        -        9        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ×  1 of 1 failed (100%)                     00:39        9        -        9        -        -  
+
