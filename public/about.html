@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="https://assets.website-files.com/62865614b39c464b76d339aa/644173f69bcb04bc957d9264_Vectors-Wrapper.svg">
+    <title>vue2-demo</title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="about" >
+      <img alt="HeroDevs logo" src="https://assets.website-files.com/62865614b39c464b76d339aa/63f4d4c6319b0d18d4460f4a_hd-logo-black-bg.svg" height="100px">
+      <h3>Saving the day when your open source software gets sunsetted.</h3>
+      <br/>
+
+      <button data-cy="home" ><a href="/" >Home</a></button>
+
+      <button data-cy="modal" id="myBtn">Open Modal</button>
+      <div data-cy="modalContent" id="myModal" class="modal">
+        <div class="modal-content">
+          <span data-cy="closeModal" class="close">&times;</span>
+          <p>"We have partnered with industry experts to provide Extended LTS for Vue 2. If you expect to be using Vue 2 beyond the EOL date of December 31st, 2023, make sure to plan ahead: Learn more about HeroDevs’ NES (Never-Ending Support) for Vue 2." -Evan You</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("myBtn");
+      var span = document.getElementsByClassName("close")[0];
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
+  </body>
+</html>
+
+<style>
+  #about {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: white;
+    margin-top: 60px;
+  }
+  body {
+    background-color: #181c1f;
+    color: white;
+  }
+  li {
+    list-style-type: none;
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 250px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    color: black;
+  }
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }    
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  </style>
+  
