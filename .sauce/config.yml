@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: cypress
+defaults: {}
+showConsoleLog: false
+sauce:
+  region: us-west-1
+  concurrency: 10
+  sauceignore: .sauceignore
+cypress:
+  configFile: cypress.config.ts
+  version: 13.3.0
+  record: false
+  key: ""
+  reporters: []
+tunnel-name: github-action-tunnel
+suites:
+  - name: "Chrome on Windows"
+    browser: "chrome"
+    platformName: "Windows 11"
+    config:
+      specPattern: [ "cypress/e2e/**/*.*" ] 
+  - name: "Chrome Beta on Windows 11"
+    browser: "chrome"
+    browserVersion: 'beta'
+    platformName: "Windows 11"
+    config:
+      specPattern: [ "cypress/e2e/*.*" ] 
+  - name: "Chrome Dev on Windows 11"
+    browser: "chrome"
+    browserVersion: 'dev'
+    platformName: "Windows 11"
+    config:
+      specPattern: [ "cypress/e2e/*.*" ] 
+  - name: "Edge on Windows 11"
+    browser: "microsoftedge"
+    browserVersion: '113'
+    platformName: "Windows 11"
+    config:
+      specPattern: [ "cypress/e2e/*.*" ] 
+  - name: "Edge dev on Windows 11"
+    browser: "microsoftedge"
+    browserVersion: 'dev'
+    platformName: "Windows 11"
+    config:
+      specPattern: [ "cypress/e2e/*.*" ] 
+  - name: "Firefox on Mac"
+    browser: "firefox"
+    browserVersion: "104"
+    shard: spec
+    platformName: "macOS 12"
+    config:
+      specPattern: [ "cypress/e2e/**/*.*" ]
+rootDir: .

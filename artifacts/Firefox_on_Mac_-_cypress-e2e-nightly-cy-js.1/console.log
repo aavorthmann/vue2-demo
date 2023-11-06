@@ -1,0 +1,74 @@
+Sauce Cypress Runner 10.4.0
+Running Cypress 12.17.2
+Preparing npm environment
+Finished
+
+DevTools listening on ws://127.0.0.1:49225/devtools/browser/b83a16ec-d727-45e7-8b2f-54b7841160c8
+Missing baseUrl in compilerOptions. tsconfig-paths will be skipped
+
+Opening `/dev/tty` failed (6): Device not configured
+tput: No value for $TERM and no -T specified
+================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        12.17.2                                                                        │
+  │ Browser:        Custom Firefox 104                                                             │
+  │ Node Version:   v18.16.1 (/Volumes/Sauce/saucectl-runners/sauce-cypress-runner/10.4.0/bundle/n │
+  │                 ode)                                                                           │
+  │ Specs:          1 found (nightly.cy.js)                                                        │
+  │ Searched:       cypress/e2e/nightly.cy.js                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  nightly.cy.js                                                                   (1 of 1)
+
+
+  testing landing page
+    ✓ submit github user and await response (11446ms)
+    ✓ check that the user and repo elements are visible
+    ✓ clear user input and ensure elements are not visible
+    ✓ add user input and submit
+    ✓ open Octocat modal, await data response, and close modal (5321ms)
+    ✓ get repo root files and load in external tabs
+    ✓ click "About HeroDevs" button on home page (7807ms)
+
+  testing about page
+    ✓ load modal and ensure element is visible
+    ✓ returns home from about page
+
+
+  9 passing (39s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        9                                                                                │
+  │ Passing:      9                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     38 seconds                                                                       │
+  │ Spec Ran:     nightly.cy.js                                                                    │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+Opening `/dev/tty` failed (6): Device not configured
+tput: No value for $TERM and no -T specified
+================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  nightly.cy.js                            00:38        9        9        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✔  All specs passed!                        00:38        9        9        -        -        -  
+

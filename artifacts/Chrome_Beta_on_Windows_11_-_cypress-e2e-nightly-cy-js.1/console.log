@@ -1,0 +1,70 @@
+Sauce Cypress Runner 10.4.0
+Running Cypress 12.17.2
+Preparing npm environment
+Finished
+
+
+DevTools listening on ws://127.0.0.1:49832/devtools/browser/a15026d1-1985-4729-8730-f12ed8d343b9
+Missing baseUrl in compilerOptions. tsconfig-paths will be skipped
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        12.17.2                                                                        │
+  │ Browser:        Custom Chrome 116                                                              │
+  │ Node Version:   v18.16.1 (D:\sauce-cypress-runner\10.4.0\bundle\node.exe)                      │
+  │ Specs:          1 found (nightly.cy.js)                                                        │
+  │ Searched:       cypress/e2e/nightly.cy.js                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  nightly.cy.js                                                                   (1 of 1)
+
+
+  testing landing page
+    √ submit github user and await response (6097ms)
+    √ check that the user and repo elements are visible (6570ms)
+    √ clear user input and ensure elements are not visible (5864ms)
+    √ add user input and submit
+    √ open Octocat modal, await data response, and close modal
+    √ get repo root files and load in external tabs (7638ms)
+    √ click "About HeroDevs" button on home page
+
+  testing about page
+    √ load modal and ensure element is visible
+    √ returns home from about page
+
+
+  9 passing (34s)
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        9                                                                                │
+  │ Passing:      9                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     34 seconds                                                                       │
+  │ Spec Ran:     nightly.cy.js                                                                    │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ √  nightly.cy.js                            00:34        9        9        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    √  All specs passed!                        00:34        9        9        -        -        -  
+

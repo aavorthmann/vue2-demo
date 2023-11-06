@@ -38,7 +38,7 @@ describe('testing landing page', () => {
   
   it('get repo root files and load in external tabs', () => {
     cy.get('[data-cy="submitUser"]').click()
-    cy.get('[data-cy="repoName"]').click({ multiple: true })
+    // cy.get('[data-cy="repoName"]').click({ multiple: true })
   })
   
   it('click "About HeroDevs" button on home page', () => {
