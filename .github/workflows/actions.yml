@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "0 0 * * *"
 
 env:
   SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}

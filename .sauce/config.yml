@@ -7,12 +7,14 @@ sauce:
   concurrency: 10
   sauceignore: .sauceignore
 cypress:
-  configFile: cypress.config.ts
+  configFile: cypress.config.js
   version: 13.3.0
   record: false
   key: ""
   reporters: []
+proxy-tunnel: true
 tunnel-name: github-action-tunnel
+tunnel-owner: oauth-aavorthmann-7c838
 suites:
   - name: "Chrome on Windows"
     browser: "chrome"
