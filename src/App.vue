@@ -18,7 +18,7 @@
     <br><br>
     </div>
     <div class="row">
-        <div class="column" style="background-color:#fff3fe;">
+        <div class="column" style="background-color:white;">
         <h2>Github Username:</h2>
         <input data-cy="userInput" v-model="githubPAT"/>
         <button data-cy="submitUser" v-on:click="getGithubData">Submit</button>
@@ -26,7 +26,7 @@
         <br><br>
         <GitProfile :user="user" :showUserData="showUserData" ></GitProfile>
       </div>
-      <div class="column" style="background-color:#e0e0fcf8;">
+      <div class="column" style="background-color:white;">
         <GitRepos :repos="repos" :showUserData="showUserData" ></GitRepos>
       </div>
     </div>
@@ -99,13 +99,6 @@ export default {
   text-align: center;
   margin-top: 60px;
 } 
-body {
-  background-color: #181c1f;
-  color: white;
-}
-.column {
-  color: black;
-}
 * {
   box-sizing: border-box;
 }
