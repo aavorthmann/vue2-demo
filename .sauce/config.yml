@@ -13,43 +13,43 @@ cypress:
   key: ""
   reporters: []
 proxy-tunnel: true
-tunnel-name: github-action-tunnel
-tunnel-owner: oauth-aavorthmann-7c838
+tunnel-name: oauth-aavorthmann-7c838_tunnel_name
+# tunnel-owner: "oauth-aavorthmann-7c838"
 suites:
   - name: "Chrome on Windows"
     browser: "chrome"
     platformName: "Windows 11"
     config:
       specPattern: [ "cypress/e2e/**/*.*" ] 
-  - name: "Chrome Beta on Windows 11"
-    browser: "chrome"
-    browserVersion: 'beta'
-    platformName: "Windows 11"
-    config:
-      specPattern: [ "cypress/e2e/*.*" ] 
-  - name: "Chrome Dev on Windows 11"
-    browser: "chrome"
-    browserVersion: 'dev'
-    platformName: "Windows 11"
-    config:
-      specPattern: [ "cypress/e2e/*.*" ] 
-  - name: "Edge on Windows 11"
-    browser: "microsoftedge"
-    browserVersion: '113'
-    platformName: "Windows 11"
-    config:
-      specPattern: [ "cypress/e2e/*.*" ] 
-  - name: "Edge dev on Windows 11"
-    browser: "microsoftedge"
-    browserVersion: 'dev'
-    platformName: "Windows 11"
-    config:
-      specPattern: [ "cypress/e2e/*.*" ] 
-  - name: "Firefox on Mac"
-    browser: "firefox"
-    browserVersion: "104"
-    shard: spec
-    platformName: "macOS 12"
-    config:
-      specPattern: [ "cypress/e2e/**/*.*" ]
+  # - name: "Chrome Beta on Windows 11"
+  #   browser: "chrome"
+  #   browserVersion: 'beta'
+  #   platformName: "Windows 11"
+  #   config:
+  #     specPattern: [ "cypress/e2e/*.*" ] 
+  # - name: "Chrome Dev on Windows 11"
+  #   browser: "chrome"
+  #   browserVersion: 'dev'
+  #   platformName: "Windows 11"
+  #   config:
+  #     specPattern: [ "cypress/e2e/*.*" ] 
+  # - name: "Edge on Windows 11"
+  #   browser: "microsoftedge"
+  #   browserVersion: '113'
+  #   platformName: "Windows 11"
+  #   config:
+  #     specPattern: [ "cypress/e2e/*.*" ] 
+  # - name: "Edge dev on Windows 11"
+  #   browser: "microsoftedge"
+  #   browserVersion: 'dev'
+  #   platformName: "Windows 11"
+  #   config:
+  #     specPattern: [ "cypress/e2e/*.*" ] 
+  # - name: "Firefox on Mac"
+  #   browser: "firefox"
+  #   browserVersion: "104"
+  #   shard: spec
+  #   platformName: "macOS 12"
+  #   config:
+  #     specPattern: [ "cypress/e2e/**/*.*" ]
 rootDir: .
