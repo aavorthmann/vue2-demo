@@ -1,24 +1,50 @@
-name: Nightly Saucelabs Test Suite
+name: Sauce Labs
 
 on:
-  pull_request:
   push:
     branches:
       - main
-  schedule:
-    - cron: "0 0 * * *"
-
-env:
-  SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
-  SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
-  GITHUB_TOKEN: ${{github.token}}
+  pull_request:
 
 jobs:
-  main:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+  build:
+    runs-on: ubuntu-18.04
+    defaults:
+      run:
+        working-directory: ./
+    env:
+      BUILD_PREFIX: true
+      IS_MAIN: ${{ github.ref == 'refs/heads/main' }}
+      SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+      SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
 
-      - name: Saucectl RUN
-        uses: saucelabs/saucectl-run-action@v3
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    # Begin Sauce Connect Action Step
+    - name: Sauce Connect Action
+      uses: saucelabs/sauce-connect-action@v1
+      with:
+        username: ${{ secrets.SAUCE_USERNAME }}
+        accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
+        tunnelIdentifier: xlts-for-angularjs-35023-0
+        scVersion: 4.6.4
+    # End Sauce Connect Action Step
+    
+    # Site Testing steps
+    - name: Install dependencies
+      run: npm install
+      
+    #This complete build and E2E tests can be found at https://github.com/coleve27/sample-app-web/blob/master/.github/workflows/sample-app-web.yml
+    - name: Build and E2E test the site
+      run: npm run start & npx wait-on --timeout 60000 http://localhost:3000 && npm run test.e2e.sauce.us
