@@ -13,7 +13,7 @@ cypress:
   key: ""
   reporters: []
 proxy-tunnel: true
-tunnel-name: oauth-aavorthmann-7c838_tunnel_name
+tunnel-name: oauth-allison-140ee_tunnel_name
 # tunnel-owner: "oauth-aavorthmann-7c838"
 suites:
   - name: "Chrome on Windows"
