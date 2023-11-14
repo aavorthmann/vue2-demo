@@ -26,5 +26,5 @@ jobs:
       - name: Run Cypress tests
         run: npm run cy:run 
 
-      # - name: Saucectl RUN
-      #   uses: saucelabs/saucectl-run-action@v3
+      - name: Saucectl RUN
+        uses: saucelabs/saucectl-run-action@v3
