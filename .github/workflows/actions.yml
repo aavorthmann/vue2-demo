@@ -51,11 +51,11 @@ jobs:
         run: | 
           set -e
           curl -L -s https://saucelabs.com/downloads/sc-4.6.4-linux.tar.gz | sudo tar -xvz
-          sc-4.6.4-linux/bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -i proxy-tunnel-$GITHUB_RUN_ID &
+          sc-4.6.4-linux/bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY -i github-action-tunnel &
       - name: Install Saucectl 
         run: |
           curl -L -s https://github.com/saucelabs/saucectl/releases/download/v${SAUCECTL_VERSION}/saucectl_${SAUCECTL_VERSION}_linux_64-bit.tar.gz | sudo tar -xvz -C /usr/bin/
       - name: Saucectl Run 
         run: |
           cd build/ && python3 -m http.server 8000 &
-          ./sc -c .sauce/config.yml --tunnel-name proxy-tunnel-$GITHUB_RUN_ID saucectl run
+          saucectl run -c .sauce/config.yml --tunnel-name github-action-tunnel sauce

@@ -10,6 +10,8 @@ cypress:
   record: false
   key: ""
 proxy-tunnel: true
+tunnelPool: true
+tunnelName: github-action-tunnel
 suites:
   - name: "Chrome on Windows 11"
     browser: "chrome"
