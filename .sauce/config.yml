@@ -9,6 +9,7 @@ cypress:
   version: 9.7.0
   record: false
   key: ""
+proxy-tunnel: true
 suites:
   - name: Browser Tests
     browser: chrome

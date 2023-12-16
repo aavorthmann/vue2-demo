@@ -58,4 +58,4 @@ jobs:
       - name: Saucectl Run 
         run: |
           cd build/ && python3 -m http.server 8000 &
-          saucectl run -c ./.sauce/config.yml proxy-tunnel-$GITHUB_RUN_ID sauce
+          saucectl run -c ./.sauce/config.yml --tunnel-identifier proxy-tunnel-$GITHUB_RUN_ID sauce
