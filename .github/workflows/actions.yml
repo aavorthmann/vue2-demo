@@ -7,8 +7,8 @@ on:
       - main
 
 env:
-  SAUCE_USERNAME: ${{secrets.SAUCE_USERNAME}}
-  SAUCE_ACCESS_KEY: ${{secrets.SAUCE_ACCESS_KEY}}
+  SAUCE_USERNAME: oauth-allison-140ee
+  SAUCE_ACCESS_KEY: 10cba118-0648-422d-bb7f-ff913f6c9c01
   SAUCECTL_VERSION: "0.168.0"
   BUILD_PREFIX: true
 
