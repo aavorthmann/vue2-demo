@@ -58,4 +58,4 @@ jobs:
       - name: Saucectl Run 
         run: |
           cd build/ && python3 -m http.server 8000 &
-          saucectl run -c .sauce/config.yml --tunnel-name github-action-tunnel sauce
+          ./sc -c .sauce/config.yml --tunnel-name github-action-tunnel saucectl run
