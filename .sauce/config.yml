@@ -1,0 +1,16 @@
+apiVersion: v1alpha
+kind: cypress
+showConsoleLog: false
+rootDir: ./
+sauce:
+  region: us-west-1
+cypress:
+  configFile: cypress.json
+  version: 9.7.0
+  record: false
+  key: ""
+suites:
+  - name: Browser Tests
+    browser: chrome
+    config:
+      testFiles: ['**/cypress/e2e/night.cy.js']
