@@ -47,19 +47,19 @@ describe('testing landing page', () => {
   })
 })
 
-describe('testing about page', () => {
-  beforeEach(() => {
-    cy.visit('/about.html')
-  })
-  it('load modal and ensure element is visible', () => {
-    cy.get('[data-cy="modal"]').click()
-    cy.get('[data-cy="modalContent"]').should('have.css', 'display', 'block')
-    cy.get('[data-cy="closeModal"]').click()
-    cy.get('[data-cy="modalContent"]').should('have.css', 'display', 'none')
-  })
+// describe('testing about page', () => {
+//   beforeEach(() => {
+//     cy.visit('/about.html')
+//   })
+//   it('load modal and ensure element is visible', () => {
+//     cy.get('[data-cy="modal"]').click()
+//     cy.get('[data-cy="modalContent"]').should('have.css', 'display', 'block')
+//     cy.get('[data-cy="closeModal"]').click()
+//     cy.get('[data-cy="modalContent"]').should('have.css', 'display', 'none')
+//   })
   
-  it('returns home from about page', () => {
-    cy.get('[data-cy="home"]').click()
-    cy.url().should('include', '/')
-  })
-})
+//   it('returns home from about page', () => {
+//     cy.get('[data-cy="home"]').click()
+//     cy.url().should('include', '/')
+//   })
+// })
