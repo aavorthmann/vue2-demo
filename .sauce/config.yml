@@ -14,4 +14,4 @@ suites:
   - name: Browser Tests
     browser: chrome
     config:
-      testFiles: ['**/cypress/e2e/night.cy.js']
+      testFiles: ['./cypress/e2e/night.cy.js']
