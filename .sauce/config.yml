@@ -11,9 +11,8 @@ cypress:
   key: ""
 proxy-tunnel: true
 suites:
-  - name: "Chrome Beta on Windows 11"
+  - name: "Chrome on Windows 11"
     browser: "chrome"
-    browserVersion: 'beta'
     platformName: "Windows 11"
     config:
-      specPattern:  [ "cypress/e2e/*.cy.*"  ]
+      specPattern:  [ "./cypress/e2e/*.cy.*"  ]
