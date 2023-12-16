@@ -5,7 +5,7 @@ rootDir: ./
 sauce:
   region: us-west-1
 cypress:
-  configFile: cypress.json
+  configFile: cypress.config.js
   version: 13.3.0
   record: false
   key: ""
