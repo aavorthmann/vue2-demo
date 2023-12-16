@@ -57,5 +57,5 @@ jobs:
           curl -L -s https://github.com/saucelabs/saucectl/releases/download/v${SAUCECTL_VERSION}/saucectl_${SAUCECTL_VERSION}_linux_64-bit.tar.gz | sudo tar -xvz -C /usr/bin/
       - name: Saucectl Run 
         run: |
-          cd build/ && python3 -m http.server 8080 &
+          cd build/ && python3 -m http.server 8000 &
           saucectl run -c .sauce/config.yml --tunnel-name github-action-tunnel sauce
