@@ -16,4 +16,4 @@ suites:
     browserVersion: 'beta'
     platformName: "Windows 11"
     config:
-      specPattern:  [ "cypress/e2e/**/*.cy.*"  ]
+      specPattern:  [ "cypress/e2e/*.cy.*"  ]
