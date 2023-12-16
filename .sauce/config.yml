@@ -1,4 +1,4 @@
-apiVersion: v1alpha
+apiVersion: v1
 kind: cypress
 showConsoleLog: false
 rootDir: ./
@@ -6,12 +6,14 @@ sauce:
   region: us-west-1
 cypress:
   configFile: cypress.json
-  version: 9.7.0
+  version: 13.3.0
   record: false
   key: ""
 proxy-tunnel: true
 suites:
-  - name: Browser Tests
-    browser: chrome
+  - name: "Chrome Beta on Windows 11"
+    browser: "chrome"
+    browserVersion: 'beta'
+    platformName: "Windows 11"
     config:
-      testFiles: ['./cypress/e2e/night.cy.js']
+      specPattern:  [ "cypress/e2e/**/*.cy.*"  ]
